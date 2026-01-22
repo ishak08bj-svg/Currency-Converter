@@ -75,8 +75,23 @@ themeBtn.addEventListener("click", ()=>{
 const uiLang = document.getElementById("uiLang");
 const title = document.querySelector("h1");
 
+// ===== إضافة الإنجليزية =====
 uiLang.addEventListener("change", ()=>{
-  title.innerText = uiLang.value === "fr"
-    ? "🌐 Traducteur Universel PRO"
-    : "🌐 مترجم عالمي PRO";
+  if(uiLang.value === "fr"){
+    title.innerText = "🌐 Traducteur Universel PRO";
+    text.placeholder = "Écrivez ici";
+    copyBtn.innerText = "Copier la traduction";
+  }
+  else if(uiLang.value === "en"){
+    title.innerText = "🌐 Universal Translator PRO";
+    text.placeholder = "Type here";
+    copyBtn.innerText = "Copy translation";
+  }
+  else{
+    title.innerText = "🌐 مترجم عالمي PRO";
+    text.placeholder = "اكتب هنا";
+    copyBtn.innerText = "نسخ الترجمة";
+  }
 });
+
+
