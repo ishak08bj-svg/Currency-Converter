@@ -1,16 +1,29 @@
-<div class="container">
-  <h1 id="title">🌐 مترجم عالمي PRO</h1>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مترجم عالمي PRO</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div class="container">
+  <h1>🌐 مترجم عالمي PRO</h1>
+
+  <!-- إضافات -->
+  <button id="themeBtn">🌙</button>
   <select id="uiLang">
-    <option value="ar">العربية</option>
-    <option value="fr">Français</option>
+    <option value="ar">AR</option>
+    <option value="fr">FR</option>
   </select>
 
   <textarea id="text" placeholder="اكتب هنا"></textarea>
   <select id="language"></select>
-
-  <button id="toggleTheme">🌙 وضع ليلي</button>
   <button id="copyBtn">نسخ الترجمة</button>
-
   <div id="result"></div>
 </div>
+
+<script src="script.js"></script>
+</body>
+</html>
