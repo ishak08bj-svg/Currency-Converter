@@ -60,12 +60,64 @@ textarea::placeholder{
 }
 
 /* select */
-select{
-  margin-top:15px;
-  padding:12px;
-  background: rgba(255,255,255,0.15);
-  color:#fff;
+/* ستايل select */
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.15); /* لون خلفية الوضع الليلي */
+  color: #fff; /* نص أبيض في الوضع الليلي */
+  font-size: 16px;
+  cursor: pointer;
+  -webkit-appearance: none; /* إزالة شكل المتصفح الافتراضي */
+  -moz-appearance: none;
+  appearance: none;
+  transition: 0.3s;
+  outline: none;
 }
+
+/* عند تمرير الماوس على select */
+select:hover {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ستايل خيارات option */
+select option {
+  background-color: rgba(255,255,255,0.15);
+  color: #fff;
+  padding: 8px;
+}
+
+/* عند الوضع النهاري */
+body.light select {
+  background: rgba(0,0,0,0.15);
+  color: #000;
+}
+
+body.light select option {
+  background-color: rgba(0,0,0,0.15);
+  color: #000;
+}
+
+/* أيقونة السهم في select (اختياري لجمال الشكل) */
+select::after {
+  content: '▼';
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #fff;
+}
+
+/* لتصميم أفضل على الهاتف */
+@media (max-width:480px){
+  select {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
 
 /* buttons */
 button{
@@ -130,3 +182,4 @@ body.light textarea::placeholder{
     font-size:16px;
   }
 }
+
