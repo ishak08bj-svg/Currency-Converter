@@ -2,6 +2,34 @@ const text = document.getElementById("text");
 const language = document.getElementById("language");
 const result = document.getElementById("result");
 const copyBtn = document.getElementById("copyBtn");
+const toggleTheme = document.getElementById("toggleTheme");
+const uiLang = document.getElementById("uiLang");
+const title = document.getElementById("title");
+
+// الوضع الليلي / النهاري
+toggleTheme.addEventListener("click", ()=>{
+  document.body.classList.toggle("light");
+
+  if(document.body.classList.contains("light")){
+    toggleTheme.innerHTML = "☀️ وضع نهاري";
+  }else{
+    toggleTheme.innerHTML = "🌙 وضع ليلي";
+  }
+});
+
+// تغيير لغة الواجهة (العنوان)
+uiLang.addEventListener("change", ()=>{
+  if(uiLang.value === "fr"){
+    title.innerHTML = "🌐 Traducteur Universel PRO";
+    text.placeholder = "Écrivez ici";
+    copyBtn.innerHTML = "Copier la traduction";
+  }else{
+    title.innerHTML = "🌐 مترجم عالمي PRO";
+    text.placeholder = "اكتب هنا";
+    copyBtn.innerHTML = "نسخ الترجمة";
+  }
+});
+
 
 // جميع لغات العالم
 const languages = {
@@ -59,3 +87,4 @@ copyBtn.addEventListener("click", () => {
     setTimeout(()=>copyBtn.innerHTML="نسخ الترجمة",1000);
   }
 });
+
